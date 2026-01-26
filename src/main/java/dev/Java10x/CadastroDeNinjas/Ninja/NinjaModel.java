@@ -9,9 +9,9 @@ import lombok.NoArgsConstructor;
 // entity transforma uma classe em entidade do BD
 @Entity
 @Table(name = "tb_cadastro")
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
 public class NinjaModel {
 
     @Id
