@@ -24,4 +24,7 @@ public class MissoesService {
     }
 
     // Deletar
+    public void deletarMissao(Long id){
+        missoesRepository.deleteById(id);
+    }
 }
