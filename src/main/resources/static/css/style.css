@@ -1,0 +1,352 @@
+/* =========================================
+   Reset e Estilos Gerais
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f0f2f5; /* Cor de fundo suave */
+    color: #333;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-weight: 600;
+    position: relative;
+}
+
+/* Detalhe visual abaixo do título */
+h1::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #3498db; /* Azul destaque */
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* =========================================
+   Estilo da Tabela Moderna
+   ========================================= */
+table {
+    width: 100%;
+    max-width: 1200px; /* Limita a largura em telas grandes */
+    border-collapse: separate; /* Necessário para bordas arredondadas */
+    border-spacing: 0;
+    background-color: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidade */
+    border-radius: 12px; /* Cantos arredondados */
+    overflow: hidden; /* Garante que o conteúdo não vaze dos cantos */
+}
+
+/* Cabeçalho da Tabela */
+thead th {
+    background-color: #2c3e50; /* Fundo escuro */
+    color: #ffffff;
+    text-align: left;
+    padding: 18px 25px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+/* Corpo da Tabela */
+tbody td {
+    padding: 20px 25px;
+    border-bottom: 1px solid #eee; /* Linha separadora sutil */
+    vertical-align: middle; /* Alinha itens verticalmente */
+}
+
+/* Efeito de Hover nas Linhas */
+tbody tr:hover {
+    background-color: #f8f9fa; /* Cor de destaque ao passar o mouse */
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* Estilo das Imagens */
+tbody td img {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    object-fit: cover;
+    width: 80px; /* Tamanho fixo para padronizar */
+    height: 80px;
+}
+
+/* Estilo para o texto da Missão (opcional para dar destaque) */
+td span {
+    font-weight: 500;
+    color: #555;
+}
+
+/* =========================================
+   Botões Atrativos (Links de Ação)
+   ========================================= */
+/* Contêiner dos botões na última célula */
+tbody td:last-child {
+    display: flex;
+    flex-direction: row;      /* Força os elementos a ficarem em linha */
+    align-items: center;      /* Alinha verticalmente no centro */
+    justify-content: center;  /* Centraliza o grupo de botões na célula */
+    gap: 12px;                /* Espaço fixo entre cada botão */
+    white-space: nowrap;      /* Regra de Ouro: Impede que os botões quebrem linha */
+    min-width: 320px;         /* Garante espaço suficiente para os três botões */
+}
+
+/* Estilo Base dos Botões */
+td a {
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 6px;       /* Um pouco menos arredondado para um visual mais sério/corporativo */
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    display: inline-block;    /* Garante que o padding seja respeitado */
+    text-align: center;
+}
+
+/* --- Cores Específicas para cada Ação ---
+   Nota: Como não temos classes no HTML, usamos nth-child.
+   Se você mudar a ordem dos links no HTML, as cores vão mudar.
+*/
+
+/* 1. Botão "Ver detalhes" (Azul/Info) */
+td a:nth-child(1) {
+    color: #1565c0;
+    background-color: #e3f2fd;
+    border-color: #bbdefb;
+}
+td a:nth-child(1):hover {
+    background-color: #1565c0;
+    color: white;
+    box-shadow: 0 4px 12px rgba(21, 101, 192, 0.2);
+}
+
+/* 2. Botão "Alterar" (Amarelo/Atenção) */
+td a:nth-child(2) {
+    color: #e65100;
+    background-color: #fff3e0;
+    border-color: #ffe0b2;
+}
+td a:nth-child(2):hover {
+    background-color: #fb8c00;
+    color: white;
+    box-shadow: 0 4px 12px rgba(251, 140, 0, 0.2);
+}
+
+/* 3. Botão "Deletar" (Vermelho/Perigo) */
+td a:nth-child(3) {
+    color: #c62828;
+    background-color: #ffebee;
+    border-color: #ffcdd2;
+}
+td a:nth-child(3):hover {
+    background-color: #d32f2f;
+    color: white;
+    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.2);
+}
+
+/* =========================================
+   Estilo para o Formulário de Cadastro
+   ========================================= */
+
+.form-container {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Sombra mais suave que a da tabela */
+    width: 100%;
+    max-width: 550px; /* Largura ideal para leitura no desktop */
+    margin: 20px auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Empilha os campos verticalmente */
+}
+
+/* Rótulos (Labels) */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 0.9rem;
+}
+
+/* Campos de Entrada (Inputs) */
+input[type="text"],
+input[type="number"],
+input[type="email"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #dcdfe6;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #606266;
+    transition: all 0.3s ease;
+}
+
+/* Efeito de Foco (Highlight) */
+input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+}
+
+/* Botão de Cadastro (Verde Sucesso) */
+button[type="submit"] {
+    background-color: #2ecc71;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #27ae60;
+}
+
+button[type="submit"]:active {
+    transform: scale(0.98); /* Efeito de clique físico */
+}
+
+/* Mensagens de Feedback */
+.mensagem {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    text-align: center;
+    border: 1px solid transparent;
+}
+
+.mensagem-sucesso {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border-color: #c8e6c9;
+}
+
+.container-acoes {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center; /* Centraliza o botão */
+    margin-top: 30px;        /* Espaço em relação à tabela */
+    margin-bottom: 50px;     /* Espaço em relação ao fim da página */
+}
+
+.btn-adicionar {
+    background-color: #2ecc71; /* Verde esmeralda */
+    color: white;
+    padding: 15px 35px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 50px;       /* Estilo pílula */
+    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-adicionar:hover {
+    background-color: #27ae60;
+    transform: translateY(-3px); /* Efeito de flutuação */
+    box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
+}
+
+.btn-adicionar:active {
+    transform: translateY(0);
+}
+
+.detalhes-container {
+            background: #ffffff;
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+            text-align: center;
+            border: 1px solid #eef0f2;
+        }
+
+        /* Estilo da Foto em Destaque */
+        .detalhes-container img {
+            border-radius: 50%; /* Foto redonda estilo avatar */
+            border: 5px solid #f8f9fa;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .detalhes-container img:hover {
+            transform: scale(1.05); /* Efeito de zoom sutil */
+        }
+
+        /* Nome do Ninja */
+        .detalhes-container h2 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        /* Lista de Informações */
+        .detalhes-container p {
+            background: #fdfdfd;
+            margin: 12px 0;
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db; /* Barra lateral azul */
+            text-align: left;
+            display: flex;
+            justify-content: space-between; /* Rótulo na esquerda, valor na direita */
+        }
+
+        .detalhes-container strong {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .detalhes-container span {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        /* Botão de Voltar customizado */
+        .btn-voltar {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 25px;
+            background-color: #34495e;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn-voltar:hover {
+            background-color: #2c3e50;
+        }

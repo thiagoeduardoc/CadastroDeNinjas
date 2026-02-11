@@ -1,0 +1,52 @@
+<!
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tabela de Ninjas</title>
+    <link rel="stylesheet" th:href="@{/css/style.css?v=1.1}">
+</head>
+<body>
+    <h1>Lista de Ninjas</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Imagem</th>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>E-mail</th>
+                <th>Rank</th>
+                <th>Missão</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each ="ninja: ${ninjas}">
+                <td th:text="${ninja.id}"></td>
+                <td><img th:src="${ninja.imagemUrl}" width="100" height="100"></td>
+                <td th:text="${ninja.nome}"></td>
+                <td th:text="${ninja.idade}"></td>
+                <td th:text="${ninja.email}"></td>
+                <td th:text="${ninja.rank}"></td>
+
+                <td>
+                    <span th:if="${ninja.missoes}"><span th:text="${ninja.missoes.nome}"></span>, Dificuldade <span th:text="${ninja.missoes.dificuldade}"></span></span>
+                    <span th:if="${ninja.missoes == null}">Sem missões</span>
+                </td>
+                <td>
+                    <a th:href="@{/ninjas/ui/listar/{id}(id=${ninja.id})}">Ver detalhes</a>
+                    <a th:href="@{/ninjas/ui/deletar/{id}(id=${ninja.id})}">Alterar</a>
+                    <a th:href="@{/ninjas/ui/deletar/{id}(id=${ninja.id})}">Deletar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="container-acoes">
+        <a th:href="@{/ninjas/ui/adicionar}" class="btn-adicionar">
+            + Adicionar Novo Ninja
+        </a>
+    </div>
+</body>
+</html>
