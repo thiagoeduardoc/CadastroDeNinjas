@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/style.css?v=1.1}">
+</head>
+<body>
+    <h1>Lista de Missões</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Missão</th>
+                <th>Dificuldade</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="missao: ${missoes}">
+                <td th:text="${missao.id}"></td>
+                <td th:text="${missao.nome}"></td>
+                <td th:text="${missao.dificuldade}"></td>
+                <td>
+                    <a th:href="@{/missoes/ui/listar/{id}(id=${missao.id})}">Informações</a>
+                    <a th:href="@{/missoes/ui/alterar/{id}(id=${missao.id})}">Alterar</a>
+                    <a th:href="@{/missoes/ui/deletar/{id}(id=${missao.id})}">Deletar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
