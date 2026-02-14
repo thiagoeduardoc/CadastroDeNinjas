@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Detalhes da Missão</title>
+    <link rel="stylesheet" th:href="@{/css/style.css?v=1.1}">
+</head>
+<body>
+<div class="detalhes-container">
+    <p><strong>ID: </strong><span th:text="${missao.id}"></span></p>
+    <p><strong>Missão: </strong><span th:text="${missao.nome}"></span></p>
+    <p><strong>Dificuldade:</strong><span th:text="${missao.dificuldade}"></span></p>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>E-mail</th>
+            <th>Rank</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each ="ninja: ${missao.ninja}">
+            <td th:text="${ninja.id}"></td>
+            <td th:text="${ninja.nome}"></td>
+            <td th:text="${ninja.idade}"></td>
+            <td th:text="${ninja.email}"></td>
+            <td th:text="${ninja.rank}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div th:if="${#lists.isEmpty(missao.ninja)}">
+        <p>Nenhum ninja atribuído a esta missão ainda.</p>
+    </div>
+
+
+    <a th:href="@{/missoes/ui/listar}" class="btn-voltar">Voltar para a Lista</a>
+</div>
+</body>
+</html>

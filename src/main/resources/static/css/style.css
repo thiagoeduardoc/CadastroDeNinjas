@@ -280,73 +280,89 @@ button[type="submit"]:active {
 }
 
 .detalhes-container {
-            background: #ffffff;
-            max-width: 500px;
-            margin: 40px auto;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-            text-align: center;
-            border: 1px solid #eef0f2;
-        }
+    background: #ffffff;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    border: 1px solid #eef0f2;
+    overflow-x: auto;
+}
 
-        /* Estilo da Foto em Destaque */
-        .detalhes-container img {
-            border-radius: 50%; /* Foto redonda estilo avatar */
-            border: 5px solid #f8f9fa;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            object-fit: cover;
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
-        }
+.detalhes-container table {
+    width: 100%;           /* Faz a tabela ocupar o espaço disponível */
+    margin: 20px auto;     /* Centraliza a tabela no container */
+    table-layout: fixed;   /* Ajuda a manter as colunas controladas */
+    border-collapse: collapse;
+}
 
-        .detalhes-container img:hover {
-            transform: scale(1.05); /* Efeito de zoom sutil */
-        }
+.detalhes-container th,
+.detalhes-container td {
+    text-align: left;      /* Alinha o texto das células para a esquerda */
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    word-wrap: break-word; /* Evita que e-mails longos estourem a célula */
+}
 
-        /* Nome do Ninja */
-        .detalhes-container h2 {
-            color: #2c3e50;
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
+/* Estilo da Foto em Destaque */
+.detalhes-container img {
+    border-radius: 50%; /* Foto redonda estilo avatar */
+    border: 5px solid #f8f9fa;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
 
-        /* Lista de Informações */
-        .detalhes-container p {
-            background: #fdfdfd;
-            margin: 12px 0;
-            padding: 12px;
-            border-radius: 8px;
-            border-left: 4px solid #3498db; /* Barra lateral azul */
-            text-align: left;
-            display: flex;
-            justify-content: space-between; /* Rótulo na esquerda, valor na direita */
-        }
+.detalhes-container img:hover {
+    transform: scale(1.05); /* Efeito de zoom sutil */
+}
 
-        .detalhes-container strong {
-            color: #7f8c8d;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-        }
+/* Nome do Ninja */
+.detalhes-container h2 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
 
-        .detalhes-container span {
-            color: #2c3e50;
-            font-weight: 600;
-        }
+/* Lista de Informações */
+.detalhes-container p {
+    background: #fdfdfd;
+    margin: 12px 0;
+    padding: 12px;
+    border-radius: 8px;
+    border-left: 4px solid #3498db; /* Barra lateral azul */
+    text-align: left;
+    display: flex;
+    justify-content: space-between; /* Rótulo na esquerda, valor na direita */
+}
 
-        /* Botão de Voltar customizado */
-        .btn-voltar {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 12px 25px;
-            background-color: #34495e;
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: background 0.3s;
-        }
+.detalhes-container strong {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
 
-        .btn-voltar:hover {
-            background-color: #2c3e50;
-        }
+.detalhes-container span {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+/* Botão de Voltar customizado */
+.btn-voltar {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 25px;
+    background-color: #34495e;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-voltar:hover {
+    background-color: #2c3e50;
+}

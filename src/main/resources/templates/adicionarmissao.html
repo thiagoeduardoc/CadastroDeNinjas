@@ -1,0 +1,25 @@
+<!
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Adicionar Missão</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<h1>Adicionar Missão</h1>
+<div class="form-container">
+    <div th:if="${mensagem}" class="mensagem" th:text="${mensagem}"></div>
+    <form th:action="@{/missoes/ui/salvar}" th:object="${missao}" method="post">
+        <label for="nome">Nome: </label>
+        <input type="text" id="nome" th:field="*{nome}" required/>
+
+        <label for="dificuldade">Dificuldade: </label>
+        <input type="text" id="dificuldade" th:field="*{dificuldade}" required/>
+
+        <button type="submit">Cadastrar Missão</button>
+    </form>
+    <a th:href="@{/missoes/ui/listar}">Voltar para a lista de Missões</a>
+</div>
+</body>
+</html>
