@@ -56,4 +56,21 @@ public class MissoesControllerUi {
         redirectAttributes.addFlashAttribute("mensagem", "Missao cadastrada");
         return "redirect:/missoes/ui/listar";
     }
+
+    @GetMapping("/alterar/{id}")
+    public String exibirFormularioEditarMissao(@PathVariable Long id, Model model) {
+        MissoesDTO missao = missoesService.listarMissaoId(id);
+        if (missao != null) {
+            model.addAttribute("missao", missao);
+            return "alterarmissao";
+        }
+        return "redirect:/missoes/ui/listar";
+    }
+
+    @PostMapping("/atualizar/{id}")
+    public String atualizarMissao(@PathVariable Long id, @ModelAttribute MissoesDTO missao, RedirectAttributes redirectAttributes) {
+        missoesService.atualizarMissao(id, missao);
+        redirectAttributes.addFlashAttribute("mensagem", "Missão atualizada com sucesso!");
+        return "redirect:/missoes/ui/listar";
+    }
 }

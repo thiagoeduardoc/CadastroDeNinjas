@@ -17,8 +17,9 @@
     <p><strong>Rank:</strong><span th:text="${ninja.rank}"></span></p>
 
     <h2>Missão:</h2>
-    <p><strong>Nome da Missão: </strong><span th:text="${ninja.missoes.nome}"></span></p>
-    <p><strong>Dificuldade:</strong><span th:text="${ninja.missoes.dificuldade}"></span></p>
+    <p th:if="${ninja.missoes}"><strong>Nome da Missão: </strong><span th:text="${ninja.missoes.nome}"></span></p>
+    <p th:if="${ninja.missoes}"><strong>Dificuldade:</strong><span th:text="${ninja.missoes.dificuldade}"></span></p>
+    <p th:if="${ninja.missoes == null}"><span>O ninja não possui nenhuma missão</span></p>
 
     <a th:href="@{/ninjas/ui/listar}" class="btn-voltar">Voltar para a Lista</a>
 </div>
